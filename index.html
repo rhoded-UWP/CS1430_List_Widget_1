@@ -602,6 +602,10 @@
       <div class="code-block" style="margin-bottom:10px">
 <span class="var">fruits</span><span class="op">[</span><span class="num">2</span><span class="op">:]</span>  <span class="comment">  # from index 2 to end</span>
       </div>
+      <div class="label">Use a step &mdash; every Nth element</div>
+      <div class="code-block" style="margin-bottom:10px">
+<span class="var">fruits</span><span class="op">[</span><span class="num">0</span><span class="op">:</span><span class="num">5</span><span class="op">:</span><span class="num">2</span><span class="op">]</span>  <span class="comment">  # every other element</span>
+      </div>
       <div class="label">Copy the whole list</div>
       <div class="code-block">
 <span class="var">copy</span> <span class="op">=</span> <span class="var">fruits</span><span class="op">[:]</span>
@@ -822,7 +826,7 @@ function updateSlice() {
     var hl = sliced.indexOf(i)>=0 ? 'hl-slice' : '';
     return '<div class="cell"><div class="cell-box '+hl+'" title="'+v+'">'+shortLabel(v)+'</div></div>';
   }).join('');
-  var stepStr = step>1 ? '<span class="op">, </span><span class="num">'+step+'</span>' : '';
+  var stepStr = step>1 ? '<span class="op">:</span><span class="num">'+step+'</span>' : '';
   document.getElementById('sl-code').innerHTML =
     '<span class="var">'+d.name+'</span><span class="op">[</span><span class="num">'+start+'</span><span class="op">:</span><span class="num">'+stop+'</span>'+stepStr+'<span class="op">]</span>';
   var vc = resultValClass(d.type);
